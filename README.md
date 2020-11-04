@@ -1,6 +1,8 @@
 # ESP8266 Ultrasonic People Counter
 Simple entry counter design for church entry counting during COVID-19 times.
 
+![People Counter](../master/blob/assets/outside.jpeg)
+
 # Parts needed:
 * ESP8266
 * US-100 ultrasonic sensor
@@ -29,6 +31,9 @@ Simple entry counter design for church entry counting during COVID-19 times.
 * VBAT - 20kohm - A0 - 4.7kohm - GND
                      |- 100nF -|
 
+# Wiring
+
+![People Counter](../master/blob/assets/inside.jpeg)
 
 # Building under Linux
 * install PlatformIO
