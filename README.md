@@ -4,12 +4,14 @@ Simple entry counter design for church entry counting during COVID-19 times.
 # Parts needed:
 * ESP8266
 * US-100 ultrasonic sensor
-* TFT ST7735 SPI based display (160x128)
+* TFT ST7735 SPI based display (160x128) 1.8''
+* Rotary encoder + switch like KY-040
+* Active mini piezo buzzer (3.3V generator inside)
 * 18650 ACU like NCR18650B
 * USB charger/protection board like TP4056
 * Low Drop 3.3V LDO
 * power switch
-* case 
+* case
 * wires
 * hot glue
 
@@ -25,7 +27,7 @@ Simple entry counter design for church entry counting during COVID-19 times.
 * BTN        - GPIO0 - the same filter
 * LED/BUZZER - GPIO2 (Buzzer connected to 3.3V GPIO2 drives to GND)
 * VBAT - 20kohm - A0 - 4.7kohm - GND
-*                    |- 100nF -|
+                     |- 100nF -|
 
 
 # Building under Linux
@@ -37,5 +39,5 @@ Simple entry counter design for church entry counting during COVID-19 times.
   platformio upload
 
 You can also use IDE to build this project on Linux/Windows/Mac. My fvorite ones:
-* [Code](https://code.visualstudio.com/).
+* [Code](https://code.visualstudio.com/)
 * [Atom](https://atom.io/)
