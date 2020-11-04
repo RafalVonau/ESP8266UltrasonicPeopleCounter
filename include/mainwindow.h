@@ -1,0 +1,14 @@
+#include "pgmspace.h"
+
+// memcpy_P(buf, MAINWINDOW_IMAGE, 20480);
+
+#define MAINWINDOW_IMAGE_LEN 20480
+#define MAINWINDOW_IMAGE_W 160
+#define MAINWINDOW_IMAGE_H 128
+
+extern const uint16_t MAINWINDOW_IMAGE[20480] PROGMEM;
+
+#define MAINWINDOW_draw(x,y) TFT_drawPixmap(x, y, MAINWINDOW_IMAGE_W, MAINWINDOW_IMAGE_H,MAINWINDOW_IMAGE)
+
+
+

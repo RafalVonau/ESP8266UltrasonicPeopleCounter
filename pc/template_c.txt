@@ -1,0 +1,11 @@
+#include "${imgname}.h"
+
+// memcpy_P(buf, ${imgnamecaps}_IMAGE, ${imglen});
+
+const uint16_t ${imgnamecaps}_IMAGE[${imglen}] PROGMEM = {
+
+	${imgdata}
+
+};
+
+

@@ -1,0 +1,14 @@
+#include "pgmspace.h"
+
+// memcpy_P(buf, ${imgnamecaps}_IMAGE, ${imglen});
+
+#define ${imgnamecaps}_IMAGE_LEN ${imglen}
+#define ${imgnamecaps}_IMAGE_W ${imglenw}
+#define ${imgnamecaps}_IMAGE_H ${imglenh}
+
+extern const uint16_t ${imgnamecaps}_IMAGE[${imglen}] PROGMEM;
+
+#define ${imgnamecaps}_draw(x,y) TFT_drawPixmap(x, y, ${imgnamecaps}_IMAGE_W, ${imgnamecaps}_IMAGE_H,${imgnamecaps}_IMAGE)
+
+
+

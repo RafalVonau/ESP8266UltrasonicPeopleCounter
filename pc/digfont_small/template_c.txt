@@ -1,0 +1,13 @@
+
+#define ${imgnamecaps}_IMAGE_LEN ${imglen}
+#define ${imgnamecaps}_IMAGE_W ${imglenw}
+#define ${imgnamecaps}_IMAGE_H ${imglenh}
+#define ${imgnamecaps}_draw(x,y) TFT_drawPixmap(x, y, ${imgnamecaps}_IMAGE_W, ${imgnamecaps}_IMAGE_H,${imgnamecaps}_IMAGE)
+
+const uint16_t ${imgnamecaps}_IMAGE[${imglen}] PROGMEM = {
+
+	${imgdata}
+
+};
+
+
