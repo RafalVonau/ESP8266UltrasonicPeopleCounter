@@ -33,6 +33,7 @@ Simple entry counter design for church entry counting during COVID-19 times.
 
 # Wiring
 
+![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/schematic.png)
 ![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/inside.jpeg)
 
 # Building under Linux
