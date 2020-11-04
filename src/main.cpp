@@ -192,8 +192,8 @@ void ICACHE_RAM_ATTR gotDistance(US100 *us100, int distanceMM)
 			g_us100_state = 0;
 		}
 		pdebug("Got distance %d, door_length=%d, state = %d\n",distcm, door_length, g_us100_state);
-		//if (g_us100_state_last != g_us100_state) { /* Single measurement */
-		if ((g_us100_valid == g_us100_state) && (g_us100_state_last != g_us100_state)) { /* Double check */
+		if (g_us100_state_last != g_us100_state) { /* Single measurement */
+		//if ((g_us100_valid == g_us100_state) && (g_us100_state_last != g_us100_state)) { /* Double check */
 			/* State change event */
 			g_us100_state_last = g_us100_state;
 			if (g_us100_state) {
@@ -329,7 +329,7 @@ void setup()
 	g_debugDistance    = new Counter(69, 7, 2, 10, 500);
 #endif
 	g_setMaxCounter    = new Counter(35, 52, 0);
-	g_setDoorLength    = new Counter(35, 52, 0);
+	g_setDoorLength    = new Counter(35, 66, 0);
 	g_orn              = new Orientation(11,31);
 	g_sndSW            = new Switch(50,60);
 	g_progress         = new ProgressBar(0, 125, 160, 3, 0xDA19, 0x7B16, 0x9DEF);
