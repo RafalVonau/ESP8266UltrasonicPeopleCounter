@@ -1,7 +1,7 @@
 # ESP8266 Ultrasonic People Counter
 Simple entry counter design for church entry counting during COVID-19 times.
 
-![People Counter](../master/blob/assets/outside.jpeg)
+![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/outside.jpeg)
 
 # Parts needed:
 * ESP8266
@@ -33,15 +33,15 @@ Simple entry counter design for church entry counting during COVID-19 times.
 
 # Wiring
 
-![People Counter](../master/blob/assets/inside.jpeg)
+![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/inside.jpeg)
 
 # Building under Linux
 * install PlatformIO
 * enter project directory
-* connect two Webmos D1 mini boards to PC computer over USB cable.
+* connect PC computer over USB to 3.3V TTL serial converter to ESP8266 GND, rx and tx pin
+* Press button on rotary and power up the device to enter programming mode
 * type in terminal:
-  platformio run
-  platformio upload
+  platformio run -t upload
 
 You can also use IDE to build this project on Linux/Windows/Mac. My fvorite ones:
 * [Code](https://code.visualstudio.com/)
