@@ -6,7 +6,7 @@
  */
 void ICACHE_RAM_ATTR SimpleRotary::process()
 {
-	char gp,gn,btn,v,Key,mv;
+	char gp,gn,btn,v,Key;
 
 	Key = gpio_r->in;
 	v =  (Key&m_gpioA)?0:1;
@@ -17,23 +17,59 @@ void ICACHE_RAM_ATTR SimpleRotary::process()
 	/* Simple key press filter */
 	if (btn) {
 		bt_hold++;
-		if (bt_phase < 100) bt_phase++;
+		if (bt_phase < 50) bt_phase++;
 	} else {
 		bt_hold = 0;
 		if (bt_phase) bt_phase--;
 	}
 	btn = 0;
-	if (bt_phase > 75) {
+	if (bt_phase > 37) {
 		if (bt_last == 0) {
 			btn     = 1;
 			bt_last = 1;
 		} else {
 			btn     = 0;
 		}
-	} else if (bt_phase < 25) {
+	} else if (bt_phase < 12) {
 		bt_last = 0;
 	}
 	/* Gauge state machine */
+#if 0
+	/* Old state machine */
+	switch (v) {
+		case 3: {
+			if (gauge_phase == 3) gp  = 1;
+			if (gauge_phase == 10) gn = 1;
+			gauge_phase = 0;
+		} break;
+		case 1: {
+			if (gauge_phase == 0) gauge_phase = 1;
+			if (gauge_phase == 9) gauge_phase = 10;
+		} break;
+		case 2: {
+			if (gauge_phase == 2) gauge_phase = 3;
+			if (gauge_phase == 0) gauge_phase = 8;
+		} break;
+		case 0: {
+			if (gauge_phase == 1) gauge_phase = 2;
+			if (gauge_phase == 8) gauge_phase = 9;
+		} break;
+		default : break;
+	}
+	if (bt_hold > m_longHoldTimeMS) {
+		m_CB(this, 2, 0);
+		bt_hold = 0;
+	} else if ((btn) || (gp) || (gn)) {
+		if (btn) {
+			/* Button pressed */
+			m_CB(this, 1, 0);
+		} else {
+			if (gp) {gauge_counter += 4; m_CB(this, 0, 1); gauge_last = gauge_counter;}
+			if (gn) {gauge_counter -= 4; m_CB(this, 0, -1);gauge_last = gauge_counter;}
+		}
+	}
+#else
+	/* New state machine */
 	switch (gauge_phase) {
 		case 1: {
 			/* Phase 1 (A = 0, B = 0) */
@@ -82,6 +118,8 @@ void ICACHE_RAM_ATTR SimpleRotary::process()
 			}
 		}
 	}
+#endif
+
 }
 //===========================================================================================
 
