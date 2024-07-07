@@ -1,7 +1,7 @@
 # ESP8266 Ultrasonic People Counter
 Simple entry counter design for church entry counting during COVID-19 times.
 
-![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/outside.jpeg)
+![alt tag](https://github.com/RafalVonau/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/outside.jpeg)
 
 # Parts needed:
 * ESP8266
@@ -33,8 +33,8 @@ Simple entry counter design for church entry counting during COVID-19 times.
 
 # Wiring
 
-![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/schematic.png)
-![alt tag](https://github.com/BubuHub/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/inside.jpeg)
+![alt tag](https://github.com/RafalVonau/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/schematic.png)
+![alt tag](https://github.com/RafalVonau/ESP8266UltrasonicPeopleCounter/blob/main/blob/assets/inside.jpeg)
 
 # Building under Linux
 * install PlatformIO
